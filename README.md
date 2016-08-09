@@ -2,6 +2,8 @@
 
 Crosshairs. For slippy maps.
 
+![](images/slippymap-crosshairs.png)
+
 ## Caveat
 
 This should probably be called something like `leaflet.crosshairs`. It might still be...
@@ -20,3 +22,5 @@ That's it. `slippymap.crosshairs` will do three things:
 3. Update both things as the window is resize and the map is moved around.
 
 That's it.
+
+By default coordinates are rendered as `latitude`, `longitude` but that can be toggled by clicking the text.
