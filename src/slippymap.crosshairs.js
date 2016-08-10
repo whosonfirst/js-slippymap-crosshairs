@@ -74,7 +74,7 @@ slippymap.crosshairs = (function(){
 	    }
 
 	    coords.setAttribute("title", title);
-	    coords.innerHTML = ll;	    
+	    coords.innerText = ll;	    
 	},
 	
 	'draw_crosshairs': function(id){
