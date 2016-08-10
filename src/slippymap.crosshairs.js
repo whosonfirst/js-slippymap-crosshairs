@@ -12,21 +12,25 @@ slippymap.crosshairs = (function(){
 	    var id = container.id;
 
 	    var draw = function(){
+		console.log("WOO");
 		self.draw_crosshairs(id);
 	    };
-	
-	    window.onresize = draw;
 
-	    map.on('load', draw);
+	    window.onresize = draw;
 
 	    var coords = function(){
 		self.draw_coords(map);
 	    };
 
-	    map.on('load', coords);
 	    map.on('move', coords);
 	    map.on('dragend', coords);
 	    map.on('zoomend', coords);
+	
+	    // because for SOME REASON these don't both work reliably in map.on('load')
+	    // because... COMPUTERS? (20160809/thisisaaronland)
+
+	    draw();
+	    coords();
 	},
 
 	'draw_coords': function(map){
