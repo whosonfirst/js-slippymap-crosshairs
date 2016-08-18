@@ -12,7 +12,6 @@ slippymap.crosshairs = (function(){
 	    var id = container.id;
 
 	    var draw = function(){
-		console.log("WOO");
 		self.draw_crosshairs(id);
 	    };
 
@@ -58,18 +57,20 @@ slippymap.crosshairs = (function(){
 	    var lat = pos['lat'];
 	    var lon = pos['lng'];	  
 	    
+	    var zoom = map.getZoom();
+
 	    var ll = undefined;
 	    var title = undefined;
 
 	    if (latlon){
 
-		ll = lat.toFixed(6) + ", " + lon.toFixed(6);
-		title = "coordinates are display as latitude,longitude – click to toggle";
+		ll = lat.toFixed(6) + ", " + lon.toFixed(6) + " #" + zoom;
+		title = "coordinates are displayed as latitude,longitude – click to toggle";
 	    }
 	    
 	    else {
 
-		ll = lon.toFixed(6) + ", " + lat.toFixed(6);
+		ll = lon.toFixed(6) + ", " + lat.toFixed(6) + " #" + zoom;
 		title = "coordinates are displayed as longitude,latitude – click to toggle";
 	    }
 
