@@ -41,17 +41,17 @@ slippymap.crosshairs = (function(){
 		var coords = document.createElement("div");
 		coords.setAttribute("id", "slippymap-coords");
 
-		coords.onclick = function(){
-		    latlon = (latlon) ? false : true;
-		    self.draw_coords(map);
-		    return;
-		};
-
 		var container = map.getContainer();
 		var container_el = document.getElementById(container.id);
 
 		container_el.parentNode.insertBefore(coords, container_el.nextSibling); 
 	    }
+
+	    coords.onclick = function(){
+		latlon = (latlon) ? false : true;
+		self.draw_coords(map);
+		return;
+	    };
 
 	    var pos = map.getCenter();
 	    var lat = pos['lat'];
