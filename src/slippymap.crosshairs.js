@@ -2,7 +2,8 @@ var slippymap = slippymap || {};
 
 slippymap.crosshairs = (function(){
 
-    var latlon = true;
+    var _latlon = true;
+    var _coords = true;
 
     var self = {
 
@@ -32,7 +33,19 @@ slippymap.crosshairs = (function(){
 	    coords();
 	},
 
+	'enable_coords': function(){
+	    _coords = true;
+	},
+
+	'disable_coords': function(){
+	    _coords = false;
+	},
+
 	'draw_coords': function(map){
+
+	    if (! _coords){
+		return;
+	    }
 
 	    var coords = document.getElementById("slippymap-coords");
 
@@ -48,7 +61,7 @@ slippymap.crosshairs = (function(){
 	    }
 
 	    coords.onclick = function(){
-		latlon = (latlon) ? false : true;
+		_latlon = (_latlon) ? false : true;
 		self.draw_coords(map);
 		return;
 	    };
@@ -62,9 +75,9 @@ slippymap.crosshairs = (function(){
 	    var ll = undefined;
 	    var title = undefined;
 
-	    if (latlon){
+	    if (_latlon){
 
-		    ll = lat.toFixed(6) + ", " + lon.toFixed(6) + " #" + zoom.toFixed(2);
+		ll = lat.toFixed(6) + ", " + lon.toFixed(6) + " #" + zoom.toFixed(2);
 		title = "coordinates are displayed as latitude,longitude – click to toggle";
 	    }
 	    
