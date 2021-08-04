@@ -1,8 +1,12 @@
 # js-slippymap-crosshairs
 
+![](images/slippymap-crosshairs.png)
+
 Crosshairs. For slippy maps.
 
-![](images/slippymap-crosshairs.png)
+## Important
+
+This package is no longer being maintained and has been superseded by [leaflet-crosshairs-control](https://github.com/sfomuseum/leaflet-crosshairs-control). You should use that instead.
 
 ## Usage
 
